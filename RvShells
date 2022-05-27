@@ -1,0 +1,45 @@
+#!/bin/bash
+#
+#Executer.
+#
+#
+
+echo "$(tput setaf 6)"
+figlet RvShells
+echo "$(tput setaf 3) "
+echo "                            @ShadowVMX"
+
+echo "$(tput setaf 2) "
+echo "[$(tput setaf 1)1.$(tput setaf 2)] base32shell."
+sleep 1
+echo "[$(tput setaf 1)2.$(tput setaf 2)] base64shell."
+sleep 1
+echo "[$(tput setaf 1)3.$(tput setaf 2)] perlshell."
+sleep 1
+echo "[$(tput setaf 1)4.$(tput setaf 2)] phpshell."
+sleep 1
+echo "[$(tput setaf 1)5.$(tput setaf 2)] pythonshell."
+sleep 1
+echo "[$(tput setaf 1)6.$(tput setaf 2)] urlencodeshell."
+echo "$(tput setaf 6) "
+
+read -p "Ingrese el tipo de RvShell (ej.1) (Usaremos puerto 4444 por defecto...) --> " shellx
+
+if [[ $shellx == "1" ]] ; then
+./base32shell 4444
+elif [[ $shellx == "2" ]] ; then
+./base64shell 4444
+elif [[ $shellx == "3" ]] ; then
+./perlshell 4444
+elif [[ $shellx == "4" ]] ; then
+./phpshell 4444
+elif [[ $shellx == "5" ]] ; then
+./pythonshell 4444
+elif [[ $shellx == "6" ]] ; then
+./urlencodeshell 4444
+else
+echo " "
+echo "$(tput setaf 2)[$(tput setaf 1)*$(tput setaf 2)]Bad Argument."
+echo " "
+exit
+fi
