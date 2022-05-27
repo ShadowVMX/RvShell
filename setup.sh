@@ -17,6 +17,14 @@ apt install php -y
 apt install cl-base64 -y
 apt install figlet -y
 
+chmod +x base32shell
+chmod +x base64shell
+chmod +x perlshell
+chmod +x phpshell
+chmod +x pythonshell
+chmod +x urlencodeshell
+chmod +x rvshells
+
 clear
 echo " "
 echo "$(tput setaf 3)[$(tput setaf 1)*$(tput setaf 3)]Instalación exitosa."
