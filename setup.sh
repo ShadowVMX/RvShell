@@ -15,6 +15,7 @@ apt install perl -y
 apt install python3 -y
 apt install php -y 
 apt install cl-base64 -y
+apt install figlet -y
 
 clear
 echo " "
