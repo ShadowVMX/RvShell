@@ -27,3 +27,12 @@ Ejecutar setup.sh --> ./setup.sh
 
 
 ![ParrotPentesting-2022-05-27-12-24-36](https://user-images.githubusercontent.com/92258683/170683231-43add25e-f787-4f7b-b76c-3020a0dd7fdc.png)
+
+
+## Reportes:
+
+juanmacoello94@gmail.com
+
+https://www.linkedin.com/in/juanma-coello-romero-757280226/
+
+
