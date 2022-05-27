@@ -23,7 +23,7 @@ sleep 1
 echo "[$(tput setaf 1)6.$(tput setaf 2)] urlencodeshell."
 echo "$(tput setaf 6) "
 
-read -p "Ingrese el tipo de RvShell (ej.1) (Usaremos puerto 4444 por defecto...) --> " shellx
+read -p "Ingrese el tipo de RvShell (ej.1) (Usaremos puerto 4444 por defecto...) --> $(tput setaf 1)" shellx
 
 if [[ $shellx == "1" ]] ; then
 ./base32shell 4444
